@@ -1,0 +1,11 @@
+.login-container{
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    margin: 5px;
+    max-width: 400px;
+}
