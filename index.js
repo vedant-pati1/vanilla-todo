@@ -3,9 +3,10 @@ const jwt = require("jsonwebtoken")
 const mongoose = require('mongoose')
 const cors = require("cors")
 const z = require('zod')
+require('dotenv').config()
+
 const { UserModel, todoModel } = require("./db")
 const { auth, JWT_SECRET } = require("./auth")
-
 
 //zod schema
 const userSchema = z.object({
@@ -119,6 +120,6 @@ app.get("/todos",auth,async (req,res)=>{
     res.json(resposnse)
 })
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("server started")
 })
